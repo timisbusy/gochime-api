@@ -9,7 +9,6 @@ function use (key) {
   client.use(key);
 }
 
-
 function addUsers (audience, users, type, cb) {
   client.addFormattedUsers(audience, formatUsers(users, type), cb);
 }
@@ -18,6 +17,13 @@ function addFormattedUsers (audience, formattedUsers, cb) {
   client.addFormattedUsers(audience, formattedUsers, cb);
 }
 
+function removeUsers (audience, users, type, cb) {
+  client.removeFormattedUsers(audience, formatUsers(users, type), cb);
+}
+
+function removeFormattedUsers (audience, formattedUsers, cb) {
+  client.removeFormattedUsers(audience, formattedUsers, cb);
+}
 
 function formatUsers (users, type) {
   var formattedUsers = [];
@@ -33,4 +39,6 @@ module.exports = {
   , addUsers: addUsers
   , addFormattedUsers: addFormattedUsers
   , formatUsers: formatUsers
+  , removeUsers: removeUsers
+  , removeFormattedUsers: removeFormattedUsers
 }
