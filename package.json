@@ -1,0 +1,12 @@
+{
+  "name": "gochime-api",
+  "version": "0.0.0",
+  "description": "Node.js wrapper for the GoChime API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Tim Atkinson",
+  "license": "BSD"
+}
