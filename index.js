@@ -10,12 +10,27 @@ function use (key) {
 }
 
 
-function addUser (audience, user, type, cb) {
-  client.addUser(audience, user, type, cb);
+function addUsers (audience, users, type, cb) {
+  client.addFormattedUsers(audience, formatUsers(users, type), cb);
+}
+
+function addFormattedUsers (audience, formattedUsers, cb) {
+  client.addFormattedUsers(audience, formattedUsers, cb);
+}
+
+
+function formatUsers (users, type) {
+  var formattedUsers = [];
+  users.forEach(function (user) {
+    formattedUsers.push({ type: user });
+  });
+  return formattedUsers;
 }
 
 module.exports = {
     use: use
   , test: test
-  , addUser: addUser
+  , addUsers: addUsers
+  , addFormattedUsers: addFormattedUsers
+  , formatUsers: formatUsers
 }
