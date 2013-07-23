@@ -1,14 +1,14 @@
 var gochime = require('./index')
   , conf = require('./conf');
 
-gochime.test(conf.token, function (err, res) {
-  if (err) { throw err; }
-  console.log(res);
-});
+// gochime.test(conf.token, function (err, res) {
+//   if (err) { throw err; }
+//   console.log(res);
+// });
 
 gochime.use(conf.token);
 
-gochime.addUsers(conf.testAudience, 'email', ['test@gochime.com'], function (err, res) {
+gochime.addUsers(conf.testAudience, ['test@gochime.com'], 'email', function (err, res) {
   if (err) { throw err; }
   console.log(res);
 });
