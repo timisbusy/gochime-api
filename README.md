@@ -1,6 +1,6 @@
 # gochime-api
 
-GoChime API wrapper for Node.js.
+GoChime API wrapper for Node.js. To use the API, you will first need to create an account at [GoChime](https://www.gochime.com).
 
 ## install
 
