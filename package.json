@@ -1,6 +1,6 @@
 {
   "name": "gochime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js wrapper for the GoChime API.",
   "main": "index.js",
   "scripts": {
