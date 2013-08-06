@@ -28,7 +28,9 @@ function removeFormattedUsers (audience, formattedUsers, cb) {
 function formatUsers (users, type) {
   var formattedUsers = [];
   users.forEach(function (user) {
-    formattedUsers.push({ type: user });
+    var fUser = {};
+    fUser[type] = user;
+    formattedUsers.push(fUser);
   });
   return formattedUsers;
 }
