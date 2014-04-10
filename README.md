@@ -1,6 +1,6 @@
 # gochime-api
 
-GoChime API wrapper for Node.js. To use the API, you will first need to create an account at [GoChime](https://www.gochime.com).
+GoChime API wrapper for Node.js. To use the API, you will first need to create an account at [GoChime](https://www.gochime.com). You can also connect with our API in some very interesting ways through our partner [Segment.io](https://segment.io).
 
 ## install
 
@@ -14,20 +14,18 @@ GoChime API wrapper for Node.js. To use the API, you will first need to create a
       console.log(res); // should log { success: true }
     });
 
-## use
+## add users to an audience
 
     var gochime = require('gochime');
-    gochime.use('MY_API_TOKEN');
-    gochime.addUsers('MY_AUDIENCE_ID', ['jim@jimbo.com'], 'email', function (err, res) {
+    gochime.addUsers('MY_API_TOKEN', 'MY_AUDIENCE_ID', [{ email: 'jim@jimbo.com'}, { email: 'tim@jimbo.com'}, { phone: '5555555555'}, { fbuid: '585191676' }], function (err, res) {
       if (err) { throw err; }
       console.log(res); // should log { success: true }
     });
 
-## add users of multiple types
+## remove users from an audience
 
     var gochime = require('gochime');
-    gochime.use('MY_API_TOKEN');
-    gochime.addFormattedUsers('MY_AUDIENCE_ID', [{ email: 'jim@jimbo.com'}, { email: 'tim@jimbo.com'}, { phone: '5555555555'}, { fbuid: '585191676' }], function (err, res) {
+    gochime.removeUsers('MY_API_TOKEN', 'MY_AUDIENCE_ID', [{ email: 'jim@jimbo.com'}, { email: 'tim@jimbo.com'}, { phone: '5555555555'}, { fbuid: '585191676' }], function (err, res) {
       if (err) { throw err; }
       console.log(res); // should log { success: true }
     });
